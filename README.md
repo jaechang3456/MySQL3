@@ -7,8 +7,8 @@
 
 ### 2. MySQL에서 in과 not in 사용법
 - MySQL에서는 리스트가 없다. 그래서 여러개의 값들이 포함 된 값을 가져올때는 in연산자를 사용하여 가져온다. 아래와 같이 사용 가능하다. 
-- select * from TABLE where released_year in (값, 값, 값, 값);
-- select * from TABLE where released_year not in (값, 값, 값, 값, 값);
+- select * from TABLE where 컬럼명 in (값, 값, 값, 값);
+- select * from TABLE where 컬럼명 not in (값, 값, 값, 값, 값);
 - 이때, 값이 들어있는 데이터 들만 가져오며, not in 사용시 그 값들을 포함하지 않는 데이터들을 가져온다.
 
 ### 3. MySQL에서 Case End 조건식 사용법
@@ -29,6 +29,7 @@ from TABLE;
 - join문은, 두개 이상의 테이블을 합칠 때 사용한다.
 select *
 from TABLE1 1
+
 join TABLE2 2
 	on 1.id = 2.id
 - 위와 같이 사용 가능하며 보통 id라는 값을 중복되게 해서 공유하는데, 이때 유니크한 id의 값을 얻기위해선 on을 사용해준다.
@@ -36,8 +37,10 @@ join TABLE2 2
 - 3개 이상의 TABLE을 합치기 위해선 위를 참고해, 아래와 같이 사용하면 된다.
 select *
 from TABLE1 1
+
 join TABLE2 2
 	on 1.id = 2.id
+	
 join TABLE3 3
 	on 1.id = 3.id
 - 또한, null값 즉, 비어있는 값이 있는 TABLE의 값까지 합치려고 한다면, join 앞에 left를 붙여, left join과 같이 사용해주면 된다.	
@@ -80,7 +83,7 @@ from TABLE;
 - 위와 같이 사용시 TABLE에서 select한 컬럼에 비어있는 값, 즉 null값이 있을 경우, 0으로 채운 후 데이터를 가져온다.
 - 0 말고 다른 데이터로도 채울 수 있다.
 
-- if() 함수 또한 존재한다. CASE~END 조건문과 같은 조건문이다. if 조건문 또한 CASE~END조건문 처럼 컬럼을 나타낸다. 아래와 같이 사용 가능하다.
+- if() 함수 또한 존재한다. CASE-END 조건문과 같은 조건문이다. if 조건문 또한 CASE-END조건문 처럼 컬럼을 나타낸다. 아래와 같이 사용 가능하다.
 select 
 	if(조건문, 참일경우 값, 거짓일경우 값) as 만들 컬럼명
 from TABLE;
