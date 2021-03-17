@@ -38,15 +38,15 @@ join TABLE2 2
 - 위와 같이 사용 가능하며 보통 id라는 값을 중복되게 해서 공유하는데, 이때 유니크한 id의 값을 얻기위해선 on을 사용해준다.
 - join한 TABLE들을 계속해서 불러오면 작업하는데 복잡해지므로 TABLE1 1과 같이 테이블 뒤에 이름을 지어준다. 여기서 TABLE1은 이름이 1이고, TABLE2는 2이다.
 - 3개 이상의 TABLE을 합치기 위해선 위를 참고해, 아래와 같이 사용하면 된다.
-- 
-select *
-from TABLE1 1
 
-join TABLE2 2
-	on 1.id = 2.id
+select *
+	from TABLE1 1
+
+	join TABLE2 2
+		on 1.id = 2.id
 	
-join TABLE3 3
-	on 1.id = 3.id
+	join TABLE3 3
+		on 1.id = 3.id
 	
 - 또한, null값 즉, 비어있는 값이 있는 TABLE의 값까지 합치려고 한다면, join 앞에 left를 붙여, left join과 같이 사용해주면 된다.	
 
