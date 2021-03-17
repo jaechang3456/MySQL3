@@ -15,8 +15,10 @@
 - MySQL에서 조건문 사용시 Case End 조건문을 많이 사용한다. 이때, Case End 조건문은 컬럼을 나타내며 아래와 같이 사용가능하다.
 select 컬럼명, 컬럼명,
   case
+  
     when 컬럼명 >= 2000 then 조건 만족시 새로운 컬럼 데이터의 값
       else 조건 만족하지 않을시 새로운 컬럼 데이터의 값
 	end as 새로 만들 컬럼명
+	
 from TABLE;
 - 이 때,
