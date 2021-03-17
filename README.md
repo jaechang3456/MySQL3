@@ -13,6 +13,7 @@
 
 ### 3. MySQL에서 Case End 조건식 사용법
 - MySQL에서 조건문 사용시 Case End 조건문을 많이 사용한다. 이때, Case End 조건문은 컬럼을 나타내며 아래와 같이 사용가능하다.
+
 select 컬럼명, 컬럼명,
 
   case
