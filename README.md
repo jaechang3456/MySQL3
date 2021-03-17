@@ -68,6 +68,8 @@ create table TABLE2(
 create table TABLE3(
 	id int auto_increment primary key,
     컬럼1,
+    컬럼2,
+    
     1_id int,
     2_id int,
     foreign key (1_id) references TABLE1(id),
